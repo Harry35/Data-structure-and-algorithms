@@ -2,10 +2,11 @@
 
 class InsertionSort extends Sort
 {
-    public function sort(&$array)
+    public function sortOld(&$array)
     {
         $n = count($array);
-        for ($i = 1; $i < n; $i++) {
+        for ($i = 1; $i < $n; $i++) {
+            //每次插入一个已排好序的数组
             for ($j = $i; $j > 0 && $array[$j] < $array[$j-1]; $j--) {
                   //三次赋值
                   $this->swap($array[$j], $array[$j-1]);
@@ -19,7 +20,7 @@ class InsertionSort extends Sort
     public function sort(&$array)
     {
         $n = count($array);
-        for ($i = 1; $i < n; $i++) {
+        for ($i = 1; $i < $n; $i++) {
             $e = $array[$i];
             $j = $i;
             for ($j; $j > 0 && $array[$j-1] < $e; $j--) {
